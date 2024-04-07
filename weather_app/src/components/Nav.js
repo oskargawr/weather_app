@@ -1,14 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Search from './search/search';
 
 function Nav() {
+
+    const handleOnSearchChange = (searchData) => {
+        console.log(searchData)
+    }
+    
     return (
         <>
             <nav className='navbar bg-body-tertiary p-2'>
                 <a href="#" className="navbar-brand fw-semibold">WEATHER APP</a>
                 <div className="d-flex">
-                    <input type="search" className="form-control me-2" placeholder='Search' aria-label='Search'/>
-                    <button className="search-btn btn btn-outline-primary" type='Submit'>Search</button>
+                    <Search onSearchChange={handleOnSearchChange}/>
                 </div>
             </nav>
         </>
