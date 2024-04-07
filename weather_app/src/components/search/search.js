@@ -13,7 +13,8 @@ function Search({ onSearchChange}) {
         setSearch(searchData)
         onSearchChange({
             lat: searchData.value.split(',')[0].trim(),
-            lon: searchData.value.split(',')[1].trim()
+            lon: searchData.value.split(',')[1].trim(),
+            city: searchData.label.split(',')[0].trim(),
         })
     }
 

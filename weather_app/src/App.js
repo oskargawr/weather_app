@@ -8,35 +8,32 @@ import axios from 'axios';
 
 
 function App() {
-  const [search, setSearch] = useState('')
-  const [weatherData, setWeatherData] = useState(null)
+    const [search, setSearch] = useState('');
+    const [weatherData, setWeatherData] = useState(null);
 
-  console.log(search)
+    useEffect(() => {
+        const fetchData = async () => {
+            if (search) {
+                try {
+                    const response = await axios.get(`${WEATHER_API_URL}/weather?lat=${search.lat}&lon=${search.lon}&appid=${WEATHER_API_KEY}`);
+                    setWeatherData({ city: search.city, ...response.data });
+                    console.log(weatherData);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (search) {
-        console.log("dzialam", search.lon);
-        try {
-          const response = await axios.get(`${WEATHER_API_URL}/weather?lat=${search.lat}&lon=${search.lon}&appid=${WEATHER_API_KEY}`);
-          console.log(`${WEATHER_API_URL}/weather?lat=${search.lat}&lon=${search.lon}&appid=${WEATHER_API_KEY}`);
-          console.log(response.data);
-          setWeatherData(response.data);
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    };
+        fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [search]);
 
-    fetchData();
-  }, [search])
-
-  return (
-    <div className="App">
-      <Nav setSearch={setSearch}/>
-      <CurrentWeather />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Nav setSearch={setSearch} />
+            {weatherData ? <CurrentWeather data={weatherData} /> : <h1 className="text-center">Loading...</h1>}
+        </div>
+    );
 }
 
 export default App;
