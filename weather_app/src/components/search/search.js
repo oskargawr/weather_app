@@ -11,7 +11,10 @@ function Search({ onSearchChange}) {
 
     const handleChange = (searchData) => {
         setSearch(searchData)
-        onSearchChange(searchData)
+        onSearchChange({
+            lat: searchData.value.split(',')[0].trim(),
+            lon: searchData.value.split(',')[1].trim()
+        })
     }
 
     const loadOptions = async (input) => {

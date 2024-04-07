@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Search from './search/search';
 
-function Nav() {
+function Nav({setSearch}) {
 
     const handleOnSearchChange = (searchData) => {
         console.log(searchData)
+        setSearch(searchData)
     }
 
     return (
