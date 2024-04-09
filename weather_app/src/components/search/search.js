@@ -44,9 +44,46 @@ function Search({ onSearchChange}) {
         value={search}
         onChange={handleChange}
         loadOptions={loadOptions}
-        >
+        styles={{
+            control: (provided, state) => ({
+                ...provided,
+                backgroundColor: 'transparent',
+                color: '#fff',
+                border: state.isFocused ? '1.5px solid #fff' : '1.5px solid #fff',
+                width: '300px',
+            }),
+            singleValue: (provided) => ({
+                ...provided,
+                color: '#fff',
+            }),
+            placeholder: (provided) => ({
+                ...provided,
+                color: '#fff',
+            }),
+            dropdownIndicator: (provided) => ({
+                ...provided,
+                color: '#fff',
+            }),
+            indicatorSeparator: (provided) => ({
+                ...provided,
+                backgroundColor: '#fff',
+            }),
+            input: (provided) => ({
+                ...provided,
+                color: '#fff',
+            }),
+            menu: (provided) => ({
+                ...provided,
+                backgroundColor: '#333',
+            }),
+            option: (provided, state) => ({
+                ...provided,
+                backgroundColor: state.isFocused ? '#555' : '#333',
+                color: state.isFocused ? '#fff' : '#fff',
+            }),
 
-    </AsyncPaginate>
+        }}
+    />
   )
 }
 

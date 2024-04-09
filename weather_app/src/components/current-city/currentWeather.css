@@ -1,0 +1,40 @@
+.weather-info-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.weather-info-main-temperature {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.weather-info-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.main-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.img-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2em;
+    border-radius: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-right: 16px;
+}
+
+.img-container img {
+    width: 100px;
+    height: 100px;
+    filter: grayscale(100%) brightness(0) invert(100%);
+}
