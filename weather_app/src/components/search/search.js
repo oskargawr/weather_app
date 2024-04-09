@@ -6,9 +6,6 @@ import axios from 'axios';
 
 function Search({ onSearchChange}) {
     const [search, setSearch] = useState('')
-
-
-
     const handleChange = (searchData) => {
         setSearch(searchData)
         onSearchChange({

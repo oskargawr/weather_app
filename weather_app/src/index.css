@@ -7,3 +7,14 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.add-city-card {
+    width: 720px;
+    height: 222.39px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
