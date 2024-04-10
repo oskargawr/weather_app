@@ -8,10 +8,10 @@ function Nav() {
     <>
       <nav
         id="nav-container"
-        className="nav-container navbar p-2 shadow-sm p-3 mb-5 justify-content-center"
+        className="nav-container navbar p-2 shadow-sm p-3 justify-content-center"
       >
         <a
-          href="#"
+          href="/"
           id="nav-title"
           className="nav-title navbar-brand fw-bold text-center"
         >

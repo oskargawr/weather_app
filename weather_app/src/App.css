@@ -6,3 +6,34 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 0;
+    grid-template-rows: 1fr repeat(4, 0);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+
+.grid-layout-main {
+    grid-area: 1 / 2 / 2 / 4;
+}
+
+.grid-layout-left {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  justify-content: center;
+}
+
+.manipulating-box {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  color: white;
+  border-radius: 1em;
+  width: 200px;
+  height: 300px;
+  justify-content: center;
+}

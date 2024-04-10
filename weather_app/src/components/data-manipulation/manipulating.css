@@ -1,0 +1,16 @@
+button.submit-button {
+    background: none;
+    border: solid 1px white;
+    padding: 0.5em;
+    border-radius: 0.7em;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    transition: 0.2s;
+}
+
+button.submit-button:hover {
+    background: white;
+    color: rgb(127, 134, 205);
+}

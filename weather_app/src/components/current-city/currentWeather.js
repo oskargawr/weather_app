@@ -8,7 +8,6 @@ import "./currentWeather.css";
 
 function CurrentWeather({ index, data, setWeatherData, deleteCity }) {
   const celsius = (data.main.temp - 273.15).toFixed(0);
-  const [expanded, setExpanded] = useState(false);
   const [expandedCity, setExpandedCity] = useState(null);
 
   const handleExpand = (event) => {
@@ -27,8 +26,8 @@ function CurrentWeather({ index, data, setWeatherData, deleteCity }) {
   return (
     <div className="container mt-5">
       <div className="row">
-        <div className="col-lg-6 mx-auto">
-          <div className="main-card card shadow-sm p-3 mb-5 rounded">
+        <div className="col-lg-12 mx-auto">
+          <div className="main-card card shadow-sm p-3 rounded">
             <div className="card-body d-flex justify-content-between align-items-start">
               <div className="weather-info-main">
                 <div className="weather-info-left">

@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api.js";
 import axios from "axios";
 import Search from "./components/search/search.js";
+import Manipulating from "./components/data-manipulation/manipulating.js";
 
 function App() {
   const [cityList, setCityList] = useState([]);
@@ -62,26 +63,35 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      {cityList.map((cityData, index) => (
-        <CurrentWeather
-          key={index}
-          index={index}
-          data={cityData}
-          setWeatherData={setWeatherData}
-          deleteCity={deleteCity}
-        />
-      ))}
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-lg-6 mx-auto">
-            <div className="main-card card shadow-sm p-3 mb-5 rounded">
-              <div className="card-body d-flex justify-content-between align-items-start">
-                <h5 className="card-title fw-bold mt-auto mb-auto">
-                  Add a city
-                </h5>
-                <Search onSearchChange={handleOnSearchChange} />
+      <div className="grid-layout">
+        <div className="grid-layout-main">
+          {cityList.map((cityData, index) => (
+            <CurrentWeather
+              key={index}
+              index={index}
+              data={cityData}
+              setWeatherData={setWeatherData}
+              deleteCity={deleteCity}
+            />
+          ))}
+          <div className="container mt-5">
+            <div className="row">
+              <div className="col-lg-12 mx-auto">
+                <div className="main-card card shadow-sm p-3 mb-5 rounded">
+                  <div className="card-body d-flex justify-content-between align-items-start">
+                    <h5 className="card-title fw-bold mt-auto mb-auto">
+                      Add a city
+                    </h5>
+                    <Search onSearchChange={handleOnSearchChange} />
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="grid-layout-left">
+          <div className="manipulating-box mt-5">
+            <Manipulating cityList={cityList} setCityList={setCityList} />
           </div>
         </div>
       </div>
