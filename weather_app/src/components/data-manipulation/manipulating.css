@@ -14,3 +14,17 @@ button.submit-button:hover {
     background: white;
     color: rgb(127, 134, 205);
 }
+
+span.MuiSlider-markLabel {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.8em;
+}
+
+p.filtering-indicators {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+}   

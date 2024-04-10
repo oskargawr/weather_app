@@ -14,6 +14,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [cookies, setCookie, removeCookie] = useCookies(["search"]);
+  const [filteredCityList, setFilteredCityList] = useState(cityList);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,7 +66,7 @@ function App() {
       <Nav />
       <div className="grid-layout">
         <div className="grid-layout-main">
-          {cityList.map((cityData, index) => (
+          {filteredCityList.map((cityData, index) => (
             <CurrentWeather
               key={index}
               index={index}
@@ -91,7 +92,10 @@ function App() {
         </div>
         <div className="grid-layout-left">
           <div className="manipulating-box mt-5">
-            <Manipulating cityList={cityList} setCityList={setCityList} />
+            <Manipulating
+              cityList={cityList}
+              setFilteredCityList={setFilteredCityList}
+            />
           </div>
         </div>
       </div>
