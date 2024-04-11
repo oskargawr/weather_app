@@ -1,0 +1,21 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t oskargawr/weather-app -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true oskargawr/weather-app npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-north-1"
+  app: "weather-app"
+  env: "WeatherApp-env"
+  bucket_name: "elasticbeanstalk-eu-north-1-533267310619"
+  bucket_path: "weather-app"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
