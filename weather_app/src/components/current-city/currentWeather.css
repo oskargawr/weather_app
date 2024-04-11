@@ -39,3 +39,14 @@
     filter: grayscale(100%) brightness(0) invert(100%);
 }
 
+@media screen and (max-width: 768px) {
+    .weather-info-main-temperature {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .img-container img {
+        width: 80px;
+        height: 80px;
+    }
+}

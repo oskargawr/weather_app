@@ -10,7 +10,8 @@ function Manipulating({ cityList, setFilteredCityList }) {
         cityList={cityList}
         setFilteredCityList={setFilteredCityList}
       />
-      <Sorting />
+      <hr />
+      <Sorting cityList={cityList} setFilteredCityList={setFilteredCityList} />
     </div>
   );
 }

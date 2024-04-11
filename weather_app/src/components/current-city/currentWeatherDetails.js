@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import "./currentWeatherDetails.css";
 import TemperatureSlider from "./temperatureSlider";
 import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
@@ -87,7 +87,7 @@ function CurrentWeatherDetails({ data }) {
             fontSize="small"
             sx={{ color: "#fff", opacity: "0.8" }}
           />
-          <p className="text-white opacity-75 fs-6 fw-normal">Air Quality:</p>
+          <p className="text-white opacity-75 fs- fw-normal">Air Quality:</p>
           <p
             className="fs-4 fw-bold"
             style={{ color: getAQIColor(airQuality) }}

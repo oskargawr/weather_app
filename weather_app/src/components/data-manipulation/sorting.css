@@ -1,0 +1,52 @@
+select.sorting-select {
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-bottom: solid 1px;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+select.sorting-select:focus {
+    outline: none;
+}
+
+select.sorting-select option {
+    background-color: #333;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-bottom: solid 1px;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.sorting-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sorting-box p {
+    color: white;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.sorting-box select {
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.sorting-box select:focus {
+    outline: none;
+    border: none;
+}

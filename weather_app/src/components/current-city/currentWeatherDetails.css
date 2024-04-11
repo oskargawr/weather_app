@@ -1,9 +1,23 @@
 .weather-details-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 8px;
     grid-row-gap: 8px;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .weather-details-grid {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .weather-details-grid {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
 }
 
 .weather-details {
