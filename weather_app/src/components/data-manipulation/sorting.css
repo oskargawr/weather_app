@@ -45,4 +45,5 @@ select.sorting-select option {
 
 .sorting-container select:focus {
     outline: none;
+    border: none;
 }
