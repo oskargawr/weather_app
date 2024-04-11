@@ -57,6 +57,6 @@
     "moduleNameMapper": {
       "^axios$": "axios/dist/node/axios.cjs"
     },
-    "transformIgnorePatterns": ["node_modules\/(?!axios)"]
+    "transformIgnorePatterns": ["node_modules\/(?!axios)", "node_modules\/(?!@mui)", "node_modules\/(?!@mui\/icons-material)", "node_modules\/(?!@mui\/material)", "node_modules\/(?!@mui\/styles)", "node_modules\/(?!@mui\/system)", "node_modules\/(?!@mui\/utils)", "/node_modules/(?!bootstrap)", "/node_modules/(?!react-select-async-paginate)"]
   }
 }
