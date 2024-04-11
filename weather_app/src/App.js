@@ -23,7 +23,14 @@ function App() {
           const response = await axios.get(
             `${WEATHER_API_URL}/weather?lat=${search.lat}&lon=${search.lon}&appid=${WEATHER_API_KEY}`
           );
-          setWeatherData({ city: search.city, ...response.data });
+          const addAirPollution = await axios.get(
+            `${WEATHER_API_URL}/air_pollution?lat=${search.lat}&lon=${search.lon}&appid=${WEATHER_API_KEY}`
+          );
+          setWeatherData({
+            city: search.city,
+            airPollution: addAirPollution.data.list[0],
+            ...response.data,
+          });
           console.log(weatherData);
           setCookie(
             "search",
