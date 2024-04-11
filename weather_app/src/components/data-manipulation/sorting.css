@@ -22,20 +22,17 @@ select.sorting-select option {
     overflow: hidden;
 }
 
-.sorting-box {
-    display: flex;
+.sorting-container {
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
-.sorting-box p {
+.sorting-container p {
     color: white;
     font-weight: 500;
-    margin-right: 10px;
 }
 
-.sorting-box select {
+.sorting-container select {
     background-color: transparent;
     color: white;
     font-weight: 500;
@@ -46,7 +43,7 @@ select.sorting-select option {
     overflow: hidden;
 }
 
-.sorting-box select:focus {
+.sorting-container select:focus {
     outline: none;
     border: none;
 }
