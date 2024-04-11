@@ -51,13 +51,14 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "babel-core": "^7.0.0-bridge.0"
+    "babel-core": "^7.0.0-bridge.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-css-modules": "^2.1.0"
   },
   "jest": {
     "moduleNameMapper": {
-      "^axios$": "axios/dist/node/axios.cjs"
-    },
-    "transformIgnorePatterns": ["node_modules\/(?!axios)", "node_modules\/(?!@mui)", "node_modules\/(?!@mui\/icons-material)", "node_modules\/(?!@mui\/material)", "node_modules\/(?!@mui\/styles)", "node_modules\/(?!@mui\/system)", "node_modules\/(?!@mui\/utils)", "/node_modules/(?!bootstrap)", "/node_modules/(?!react-select-async-paginate)"],
-    "moduleFileExtensions": ["js", "jsx", "json", "node", "css"]
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    "^axios$": "axios/dist/node/axios.cjs"
+    }
   }
 }
