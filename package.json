@@ -48,5 +48,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "babel-core": "^7.0.0-bridge.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-css-modules": "^2.1.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    "^axios$": "axios/dist/node/axios.cjs"
+    }
   }
 }
