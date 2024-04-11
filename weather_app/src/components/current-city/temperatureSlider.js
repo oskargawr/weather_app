@@ -13,22 +13,13 @@ function TemperatureSlider({ data }) {
   const maxTemp = parseInt(toCelsius(main.temp_max));
   const currentTemp = parseInt(toCelsius(main.temp));
 
-  // Ensure current temperature is within the range of min and max temperatures
-  const clampedCurrentTemp = Math.max(minTemp, Math.min(currentTemp, maxTemp));
-  const percentage =
-    ((clampedCurrentTemp - minTemp) / (maxTemp - minTemp)) * 100;
-
   return (
-    <div className="temperature-slider-container">
-      <div
-        className="progress"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuemin={minTemp}
-        aria-valuemax={maxTemp}
-        aria-valuenow={currentTemp}
-      >
-        <div className="progress-bar" style={{ width: `${percentage}%` }}></div>
+    <div>
+      <div className="temp-container">
+        <p className="text-white opacity-75 fw-bold fs- text-center">Min</p>
+        <p className="fs-3 text-center text-white">{minTemp}°C</p>
+        <p className="text-white opacity-75 fw-bold fs- text-center">Max</p>
+        <p className="fs-3 text-center text-white">{maxTemp}°C</p>
       </div>
     </div>
   );

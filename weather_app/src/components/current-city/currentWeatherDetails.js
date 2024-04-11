@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./currentWeatherDetails.css";
 import TemperatureSlider from "./temperatureSlider";
 import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
+import CompressIcon from "@mui/icons-material/Compress";
+import SunsetSunrise from "./sunsetSunrise";
+import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import AirIcon from "@mui/icons-material/Air";
+import SpaIcon from "@mui/icons-material/Spa";
 
 function getAQIColor(aqi) {
   switch (aqi) {
@@ -74,8 +78,15 @@ function CurrentWeatherDetails({ data }) {
             {weather[0].description}
           </p>
         </div>
-        <div className="weather-details min-max"></div>
+        <div className="weather-details min-max">
+          <TemperatureSlider data={data} />
+        </div>
         <div className="weather-details air-pollution">
+          <SpaIcon
+            className="feels-like-icon"
+            fontSize="small"
+            sx={{ color: "#fff", opacity: "0.8" }}
+          />
           <p className="text-white opacity-75 fs-6 fw-normal">Air Quality:</p>
           <p
             className="fs-4 fw-bold"
@@ -84,10 +95,40 @@ function CurrentWeatherDetails({ data }) {
             {airQuality}
           </p>
         </div>
-        <div className="weather-details pressure">a</div>
-        <div className="weather-details humidity">a</div>
-        <div className="weather-details sunset-sunrise">a</div>
-        <div className="weather-details wind">a</div>
+        <div className="weather-details pressure">
+          <CompressIcon
+            className="feels-like-icon"
+            fontSize="small"
+            sx={{ color: "#fff", opacity: "0.8" }}
+          />
+          <p className="p-feels-like fs-6 fw-normal opacity-75">Pressure:</p>
+          <p className="fs-4 text-white">{main.pressure} hPa</p>
+        </div>
+        <div className="weather-details humidity">
+          <WaterDropIcon
+            className="feels-like-icon"
+            fontSize="small"
+            sx={{ color: "#fff", opacity: "0.8" }}
+          />
+          <p className="p-feels-like fs-6 fw-normal opacity-75 text-white">
+            Humidity:
+          </p>
+          <p className="fs-4 text-white">{main.humidity}%</p>
+        </div>
+        <div className="weather-details sunset-sunrise">
+          <SunsetSunrise sys={sys} />
+        </div>
+        <div className="weather-details wind">
+          <AirIcon
+            className="feels-like-icon"
+            fontSize="small"
+            sx={{ color: "#fff", opacity: "0.8" }}
+          />
+          <p className="p-feels-like fs-6 fw-normal opacity-75 text-white">
+            Wind speed:
+          </p>
+          <p className="fs-4 text-white">{wind.speed} m/s</p>
+        </div>
       </div>
     </div>
   );
