@@ -12,7 +12,7 @@ deploy:
   provider: elasticbeanstalk
   region: "eu-north-1"
   app: "weather-app"
-  env: "WeatherApp-env"
+  env: "Weather-app-env"
   bucket_name: "elasticbeanstalk-eu-north-1-533267310619"
   bucket_path: "weather-app"
   on:
