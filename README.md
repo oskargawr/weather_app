@@ -1,6 +1,6 @@
 # Weather App
 
-[http://oskar-weather-app.eu-north-1.elasticbeanstalk.com](weather-app-demo) // hosted on elastic beanstalk on AWS
+[weather-app-demo](http://oskar-weather-app.eu-north-1.elasticbeanstalk.com) // hosted on elastic beanstalk on AWS
 
 This is a weather app built in React, utilizing the Open Weather API and GeoDB API. It allows users to add cities and compare weather conditions in them. Users have the option to filter cities by temperature range and sort them by temperature and air quality.
 
