@@ -6,4 +6,4 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
-    tty: true
+    # tty: true
